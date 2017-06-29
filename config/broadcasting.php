@@ -17,7 +17,7 @@ return [
 
     'default' => env('BROADCAST_DRIVER', 'pusher'),
 
-    /*
+    /*s
     |--------------------------------------------------------------------------
     | Broadcast Connections
     |--------------------------------------------------------------------------
@@ -36,9 +36,8 @@ return [
             'secret' => env('PUSHER_APP_SECRET'),
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
-                    'cluster' => 'ap1',
+                    'cluster' => env('PUSHER_CLUSTER'),
                     'encrypted' => true,
-                    'debug' => true
 
             ],
         ],

@@ -58,15 +58,3 @@ window.Echo = new Echo({
     encrypted: true
 
 });
-
-        // if(typeof io === "undefined"){
-        //     alert('please check your laravel-echo-server status!');
-        // }else{
-			window.Echo.channel('channel-demo')
-                .listen('MessagePosted', function (e) {
-                	alert(e)
-                    if (e) {
-                        app.listenMsg(e);
-                    }
-                });
-		// }

@@ -12,7 +12,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use App\User;
 use App\Message;
 
-class MessageSent
+class MessageSent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -49,5 +49,13 @@ class MessageSent
     public function broadcastOn()
     {
         return new PrivateChannel('chat');
+    }
+
+        public function broadcastWith()
+    {
+        return [
+            'message' => $this->message,
+            'user' => $this->user,
+        ];
     }
 }
